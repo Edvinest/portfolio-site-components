@@ -1,0 +1,117 @@
+.terminal {
+  background-color: var(--transparent-black-bg);
+  padding: 1%;
+  font-family: PixeloidSans, "Times New Roman", serif;
+  font-size: clamp(0.1vw, 1vw, 2vw);
+  line-height: 1.2;
+  color: lime;
+
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  height: 100%;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+}
+
+.terminal::-webkit-scrollbar{
+  display: none;
+}
+
+/* Terminal elements */
+
+.fetch{
+  display: flex;
+}
+
+.ascii-art {
+  margin: auto auto;
+  font-weight: bold;
+  text-shadow: 0.3vw 0.3vh 0.5vw lime;
+}
+
+.text-field {
+  font-size: 1.25vw;
+}
+
+.text-field>b {
+  font-family: PixeloidSansBold;
+}
+
+.viewmode::after{
+  content: "Desktop"
+}
+
+.input-container{
+  display: flex;
+  font-size: 1.25vw;
+}
+
+.input-container > input{
+  width: 100%;
+
+  border: 0;
+
+  font-size: 1vw;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+.input-container > input:focus{
+  border: 0;
+  outline: 0;
+}
+
+.window-handle{
+  background-color: var(--transparent-black-bg);
+}
+
+@media screen and (max-width: 992px) {
+  .terminal {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding-top: 2vh;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+  .text-field {
+    line-height: normal;
+    font-size: 4.5vw;
+    word-wrap: break-word;
+    margin: auto auto;
+  }
+
+  .ascii-art {
+    font-size: 4vw;
+    text-shadow: 0.5vw 0.5vh 0.9vw lime;
+  }
+
+  .viewmode{
+    content: "";
+  }
+  .viewmode::after{
+    content: "Mobile/Tablet";
+  }
+
+  .window-handle{
+    background-color: black;
+  }
+
+  .input-container{
+    font-size: 2rem;
+  }
+
+  .input-container > input{
+    font-size: 1.25rem;
+  }
+}

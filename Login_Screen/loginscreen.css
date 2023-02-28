@@ -1,0 +1,191 @@
+.login-screen {
+  position: absolute;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 100;
+
+  /*when the user visits the background is blue for a bit to not show the Desktop, while the gif is loading*/
+  background: url("/images/anime_water_animation.gif"), url("/images/anime_water.png"), rgb(27, 177, 236);
+  background-size: cover;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-panel{
+  background: linear-gradient(#00294080, #17004080);
+  min-height: 50%;
+  min-width: 20vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+}
+
+.login-panel > * {
+  margin-bottom: 4vh;
+}
+
+.login-panel > span{
+  font-size: 4vh;
+  color: white;
+  text-shadow: 0.1vw 0.1vh black;
+  text-transform: uppercase;
+}
+
+.login-panel > button{
+  font-size: 2vh;
+  background-color: transparent;
+
+  border: 2px solid white;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+
+.login-panel > button:hover{
+  background-color: #ffffff50;
+}
+
+.avatar{
+  border: 3px solid white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  width: 10vw;
+  height: 10vw;
+
+}
+
+.loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.loading-ring {
+  width: 15%;
+  height: 30%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-ring>* {
+  text-align: center;
+}
+
+.loading-ring:before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  border-radius: 50%;
+  border: 0.5vw solid #ddd;
+  border-color: #ddd transparent #ddd transparent;
+  animation: loading-ring 1s linear infinite;
+}
+
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  animation: blink 1s linear infinite;
+  -webkit-animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .login-panel{
+    min-width: 50vw;
+  }
+
+  .login-panel > span {
+    font-size: 3vh;
+  }
+
+  .avatar{
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .loading-ring {
+    width: 25%;
+    height: 25%;
+  }
+
+  .loading-ring:before {
+    border-width: 1vw;
+    width: 75%;
+    height: 75%;
+  }
+
+}
+
+@media screen and (max-width: 600px){
+  .loading-ring {
+    width: 30%;
+    height: 15%;
+  }
+
+  .login-panel{
+    min-width: 75vw;
+  }
+
+  .avatar{
+    width: 45vw;
+    height: 45vw;
+  }
+}

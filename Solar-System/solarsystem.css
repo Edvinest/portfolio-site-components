@@ -1,0 +1,147 @@
+:root {
+    --vertical-center: 50%;
+    --horizontal-center: 50%;
+    --sun-color: radial-gradient(circle, orange, yellow, white);
+    --mercury-color: conic-gradient(orchid, lime, yellow, orchid);
+    --venus-color: radial-gradient(darkorange, orange, yellow);
+    --earth-color: linear-gradient(193deg, rgba(0, 89, 17, 1) 0%, rgba(36, 172, 83, 1) 35%, rgba(0, 106, 255, 1) 100%);
+    --mars-color: tomato;
+    --jupiter-color: bisque;
+    --saturn-color: cornsilk;
+    --uranus-color: radial-gradient(#64b5f6, #90caf9, #005cb2);
+    --neptune-color: darkblue;
+}
+
+.solar-system {
+    background-color: black;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planets div {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.sun>div {
+    position: absolute;
+    animation-name: orbit;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: orbit;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    transform-origin: calc(50% + 3.125vw) calc(50% + 6.25vh);
+}
+
+
+.sun {
+    background: var(--sun-color);
+    border: 2px solid orange;
+
+    width: 6.25vw;
+    height: 12.5vh;
+}
+
+.mercury {
+    background: var(--mercury-color);
+    animation-duration: 0.88s;
+    width: 0.8vw;
+    height: 1.6vh;
+    left: calc(var(--horizontal-center) - 3.5vw);
+    top: calc(var(--vertical-center) - 6.5vh);
+    animation-name: mercury-distance;
+    -webkit-animation-name: mercury-distance;
+}
+
+.venus {
+    background: var(--venus-color);
+    width: 0.25vw;
+    height: 0.5vh;
+    animation-duration: 2.25s;
+}
+
+.earth {
+    background: var(--earth-color);
+    width: 0.3vw;
+    height: 0.6vh;
+    animation-duration: 3.65s;
+}
+
+.mars {
+    background: var(--mars-color);
+    
+    width: 0.15vw;
+    height: 0.3vh;
+    animation-duration: 6.87s;
+}
+
+.jupiter {
+    background: var(--jupiter-color);
+    
+    top: calc(var(--vertical-center) - 15vh);
+    
+    width: 2.5vw;
+    height: 5vh;
+    
+    animation-duration: 43.33s;
+}
+
+.saturn {
+    background: var(--saturn-color);
+    
+    width: 2vw;
+    height: 4vh;
+    animation-duration: 107.59s;
+}
+
+.uranus {
+    background: var(--uranus-color);
+    
+    width: 0.75vw;
+    height: 1.5vh;
+    animation-duration: 306.87s;
+}
+
+.neptune {
+    background: var(--neptune-color);
+    
+    width: 0.75vw;
+    height: 1.5vh;
+    animation-duration: 601.9s;
+}
+
+.control-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
